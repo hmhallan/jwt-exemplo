@@ -1,0 +1,17 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      			http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1" metadata-complete="false">
+	<display-name>JWT - exemplo</display-name>
+
+<!-- 
+	<filter-mapping>
+		<filter-name>CORSFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ValidateTokenFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
+	</filter-mapping>
+ -->
+</web-app>
