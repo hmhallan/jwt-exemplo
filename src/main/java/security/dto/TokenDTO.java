@@ -2,12 +2,12 @@ package security.dto;
 
 import java.util.Date;
 
-import entity.Usuario;
+import security.principal.UserPrincipal;
 
 public class TokenDTO {
 	
 	//dados do usuario
-	private Usuario sub;
+	private UserPrincipal sub;
 	
 	//data de expiracao
 	private Date exp;
@@ -21,11 +21,11 @@ public class TokenDTO {
 				+ "]";
 	}
 
-	public Usuario getSub() {
+	public UserPrincipal getSub() {
 		return sub;
 	}
 
-	public void setSub(Usuario sub) {
+	public void setSub(UserPrincipal sub) {
 		this.sub = sub;
 	}
 

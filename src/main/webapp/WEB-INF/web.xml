@@ -3,15 +3,10 @@
                       			http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1" metadata-complete="false">
 	<display-name>JWT - exemplo</display-name>
+	
+	<context-param>
+		<param-name>resteasy.role.based.security</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
-<!-- 
-	<filter-mapping>
-		<filter-name>CORSFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>ValidateTokenFilter</filter-name>
-		<url-pattern>/api/*</url-pattern>
-	</filter-mapping>
- -->
 </web-app>

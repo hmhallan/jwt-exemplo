@@ -12,7 +12,6 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -21,6 +20,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import security.dto.TokenDTO;
 import security.exception.TokenException;
+import security.principal.UserPrincipal;
 
 public class TokenUtil {
 	
@@ -42,7 +42,7 @@ public class TokenUtil {
 			//pega o usuario do subject 
 			String subject = claim.getSubject();
 			ObjectMapper mapper = new ObjectMapper();
-			dto.setSub(mapper.readValue(subject, Usuario.class));
+			dto.setSub(mapper.readValue(subject, UserPrincipal.class));
 			
 			return dto;
 			
@@ -63,7 +63,7 @@ public class TokenUtil {
 		
 	}
 	
-	public static String generateToken(Usuario u, Date dataExpiracao){
+	public static String generateToken(UserPrincipal u, Date dataExpiracao){
 		String s = null;
 		try {
 			byte[] encodedKey = Base64.getEncoder().encode(SECRET.getBytes());

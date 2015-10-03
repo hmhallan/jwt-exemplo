@@ -17,7 +17,7 @@ import security.dto.TokenDTO;
 import security.exception.TokenException;
 import security.util.TokenUtil;
 
-@WebFilter(filterName="ValidateTokenFilter")
+@WebFilter(filterName="ValidateTokenFilter", urlPatterns="/rest/*")
 public class ValidateTokenFilter implements Filter {
 
 	@Override
@@ -34,9 +34,9 @@ public class ValidateTokenFilter implements Filter {
 			//valida o token da request
 			TokenDTO dto = TokenUtil.getFromToken(token);
 			
-			System.out.println("usuario da requisição: " + dto.getSub() );
-			
-			chain.doFilter(request, response);
+			//valido, encaminha a request
+			TokenRequestWrapper wrapper = new TokenRequestWrapper(request, dto);
+			chain.doFilter(wrapper, response);
 			
 		} catch (TokenException e) {
 			response.addHeader("x-message", e.getMessage());

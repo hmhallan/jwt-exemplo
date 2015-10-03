@@ -21,8 +21,8 @@ import javax.ws.rs.core.Response.Status;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dao.UsuarioDAO;
-import entity.Usuario;
 import security.dto.TokenDTO;
+import security.principal.UserPrincipal;
 import security.util.TokenUtil;
 
 /**
@@ -52,7 +52,7 @@ public class GenerateTokenServlet extends HttpServlet {
 		String username = jsonObject.getString("username");
 		String password = jsonObject.getString("password");
 		
-		Usuario u = usuarioDao.doLogin(username, password);
+		UserPrincipal u = usuarioDao.doLogin(username, password);
 		
 		if (u != null){
 			//conteudo da resposta para json

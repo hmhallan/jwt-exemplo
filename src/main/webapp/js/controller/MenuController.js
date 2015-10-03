@@ -7,8 +7,6 @@
         if ($scope.isLogged){
         	$scope.nome = AuthenticationFactory.user().login;
 		}
-	
-        console.info($scope.isLogged);
         
         //eventos do menu
         $scope.logout = function(){
