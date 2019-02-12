@@ -1,42 +1,47 @@
-<!doctype html>
-<html lang="pt-BR" ng-app="jwt-exemplo">
-	<head>
-		<meta charset="utf8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="hallan medeiros">
 
-		<!-- Css -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+        <title>JWT - Exemplo</title>
 
-		<!-- js -->
-		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
-        <script src="https://code.angularjs.org/1.4.6/angular-route.js"></script>
-        <script src="https://code.angularjs.org/1.4.6/angular-sanitize.js"></script>
-        <script src="https://code.angularjs.org/1.4.6/i18n/angular-locale_pt-br.js"></script>
-       	<script src="assets/ngstorage.js"></script>
-       
-       	<!-- Factories -->
-        <script src="js/factory/auth.js"></script>
-        
+        <link href="assets/css/bootstrap4-cosmo.min.css" rel="stylesheet">
+        <link href="assets/css/sticky-footer.css" rel="stylesheet">
+        <link href="assets/css/app.css" rel="stylesheet">
+        <link href="assets/css/login.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    </head>
+    <body ng-app="jwt-exemplo">
+
+        <main role="main" class="container">
+
+            <section ng-include="'modules/layout/menu.html'"></section>
+
+            <section ng-view=""></section>
+        </main>
+
+        <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+        <script src="vendor/angular.min.js"></script>
+        <script src="vendor/angular-route.min.js"></script>
+        <script src="vendor/angular-animate.min.js"></script>
+        <script src="vendor/angular-sanitize.min.js"></script>
+        <script src="https://code.angularjs.org/1.7.2/i18n/angular-locale_pt-br.js"></script>
+        <script src="vendor/bootstrap4.min.js"></script>
+        <script src="vendor/ui-bootstrap-tpls-3.0.4.min.js"></script>
+        <script src="vendor/ngstorage.js"></script>
+
+        <!-- Factories -->
+        <script src="modules/core/auth.js"></script>
+
         <!-- Aplicação -->
-        <script src="js/app.js"></script>
-  
-        
-		<!-- Controllers -->
-		<script src="js/controller/HomeController.js"></script>
-		<script src="js/controller/LoginController.js"></script>
-		<script src="js/controller/MenuController.js"></script>
+        <script src="modules/core/app.js"></script>
 
-		<title>JWT - exemplo</title>
-	</head>
-	
-	<body>
-	
-		<section ng-include="'partials/menu.html'"></section>
-	
-		<div class="container" id="view" ng-view></div>
-	</body>
+        <!-- Controllers -->
+        <script src="modules/layout/menu.controller.js"></script>
+        <script src="modules/login/login.controller.js"></script>
+        <script src="modules/home/home.controller.js"></script>
+    </body>
 </html>

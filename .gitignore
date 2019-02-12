@@ -48,3 +48,7 @@ Temporary Items
 .classpath
 .settings/
 target/
+
+#intellij
+.idea/
+jwt-exemplo.iml

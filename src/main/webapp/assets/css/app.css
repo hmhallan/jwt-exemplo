@@ -1,0 +1,46 @@
+
+.f6 {
+    font-size: 2rem;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.nav, .pagination, .carousel, .card-title a { cursor: pointer; }
+
+.uib-right i svg{
+    width: 10px !important;
+    height: 10px !important;
+}
+.uib-left i svg{
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.menu-link {
+    cursor: pointer;
+}
+
+.text-muted {
+    opacity: 0.5;
+}
+
+.milestone-counter {
+    float: left;
+    margin: 5px;
+    text-align: center;
+}
+.highlight {
+   color:#222;
+   padding:2px 0;
+   font-weight:bold;
+   display:block;
+   overflow:hidden;
+   margin-bottom:0;
+   font-size:36px;
+}
+.milestone-details {
+   font-size:18px;
+   color:#999;
+}
